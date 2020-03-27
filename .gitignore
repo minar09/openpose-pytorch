@@ -1,4 +1,5 @@
 hiddenlayer/
+model/
 *.pth
 *.pyc
 *.caffemodel
