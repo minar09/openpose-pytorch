@@ -1,7 +1,7 @@
 ## Disclaimer
 This is a slightly modified version [pytorch-openpose](https://github.com/Hzzone/pytorch-openpose) github repository. Modifications are:
 #### 1) demo_body.py: 
-        pose estimation of human body in 25 pose keypoints, and saving them into .json files.
+        pose estimation of human body only, and saving them into .json files.
 
 
 ## pytorch-openpose
