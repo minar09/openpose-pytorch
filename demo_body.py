@@ -21,8 +21,8 @@ image_list = os.listdir(image_dir)
 for each in image_list:
     test_image = os.path.join(image_dir, each)
     json_file = each[:-4] + "_keypoints.json"
-    # outjoint_path = os.path.join(image_dir.replace("image/", "pose/"), json_file)
-    outjoint_path = os.path.join(image_dir.replace("image/", "pose-25/"), json_file)
+    outjoint_path = os.path.join(image_dir.replace("image/", "pose/"), json_file)
+    # outjoint_path = os.path.join(image_dir.replace("image/", "pose-25/"), json_file)
 
     oriImg = cv2.imread(test_image)  # B,G,R order
     candidate, subset = body_estimation(oriImg)
@@ -36,7 +36,7 @@ for each in image_list:
 
     people   = [oneperson]
     joints_json =  { "version": 1.0, "people": people }
-    with  open(outjoint_path, 'w') as joint_file:
+    with open(outjoint_path, 'w') as joint_file:
             json.dump(joints_json, joint_file)
     """canvas = util.draw_bodypose(canvas, candidate, subset)
     plt.imshow(canvas[:, :, [2, 1, 0]])
