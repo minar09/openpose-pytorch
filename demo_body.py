@@ -14,7 +14,8 @@ import numpy as np
 body_estimation = Body('model/body_pose_model.pth')
 
 # image_dir = "D:/Datasets/SeoulTechFashion/same-model-dataset/image/"
-image_dir = "D:/Datasets/viton_resize/test/image/"
+# image_dir = "D:/Datasets/viton_resize/test/image/"
+image_dir = "/data/matiur/StyleViton/datasets/Fashionade/test_v2/image/"
 image_list = os.listdir(image_dir)
 
 for each in image_list:
