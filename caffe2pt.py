@@ -379,8 +379,8 @@ if __name__ == '__main__':
 	parser.add_argument('--caffe.proto', metavar = '--caffe.proto', dest = 'caffe_proto', help = 'Path to caffe.proto (typically located at CAFFE_ROOT/src/caffe/proto/caffe.proto)', default = 'https://raw.githubusercontent.com/BVLC/caffe/master/src/caffe/proto/caffe.proto')
 	parser.add_argument('--output_path', default='model/pose_deploy_linevec.pt')
 	args = parser.parse_args()
-	args.output_path = args.output_path or args.model_caffemodel + '.pt'
-
+	# args.output_path = args.output_path or args.model_caffemodel + '.pt'
+	
 	net_param = initialize(args.caffe_proto).NetParameter()
 	net_param.ParseFromString(open(args.model_caffemodel, 'rb').read())
 	blobs = {layer.name + '.' + name : dict(data = blob.data, shape = list(blob.shape.dim) if len(blob.shape.dim) > 0 else [blob.num, blob.channels, blob.height, blob.width]) for layer in list(net_param.layer) + list(net_param.layers) for name, blob in zip(['weight', 'bias'], layer.blobs)}
