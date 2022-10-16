@@ -374,8 +374,8 @@ def to_dict(obj):
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
-	parser.add_argument(metavar = 'model.caffemodel', dest = 'model_caffemodel', help = 'Path to model.caffemodel')
-	parser.add_argument('-o', dest = 'output_path', help = 'Path to converted model, supported file extensions are: h5, npy, npz, json, pt')
+	parser.add_argument(metavar = 'model.caffemodel', dest = 'model/pose_deploy_linevec.prototxt', help = 'Path to model.caffemodel')
+	parser.add_argument('-o', dest = 'model', help = 'Path to converted model, supported file extensions are: h5, npy, npz, json, pt')
 	parser.add_argument('--caffe.proto', metavar = '--caffe.proto', dest = 'caffe_proto', help = 'Path to caffe.proto (typically located at CAFFE_ROOT/src/caffe/proto/caffe.proto)', default = 'https://raw.githubusercontent.com/BVLC/caffe/master/src/caffe/proto/caffe.proto')
 	args = parser.parse_args()
 	args.output_path = args.output_path or args.model_caffemodel + '.pt'
